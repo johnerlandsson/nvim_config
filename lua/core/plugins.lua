@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
   use 'preservim/vimux'
   use 'neoclide/coc.nvim'
   use 'rust-lang/rust.vim'
+  use 'connordeckers/nerdcommenter.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

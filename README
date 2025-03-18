@@ -1,2 +1,3 @@
 My personal nvim settings
+Clone to ~/.config/nvim
 Symlink tmux.conf to ~/.tmux.conf
