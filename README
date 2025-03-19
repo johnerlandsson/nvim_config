@@ -1,3 +1,7 @@
 My personal nvim settings
-Clone to ~/.config/nvim
-Symlink tmux.conf to ~/.tmux.conf
+
+* Clone to ~/.config/nvim
+* Symlink tmux.conf to ~/.tmux.conf
+* Put openai key in ~/.config/openai.token 
+
+
