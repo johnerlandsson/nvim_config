@@ -48,3 +48,17 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "rust",
   callback = set_rust_keymaps
 })
+--
+-- Python specific keymaps
+local function set_python_keymaps()
+  local opts = { noremap = true, silent = true, buffer = true }
+  vim.keymap.set("n", "<leader>y", ':Autopep8<CR>', opts) 
+  -- Set K to show info
+vim.keymap.set("n", "K", ':call CocAction("doHover")<CR>', opts) 
+
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = set_python_keymaps
+})
