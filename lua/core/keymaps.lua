@@ -2,6 +2,10 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
+-- Switch buffer with gn and gp
+vim.keymap.set("n", "gn", ":bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "gp", ":bprevious<CR>", { noremap = true, silent = true })
+
 -- Clear search highlights with leader-h
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
