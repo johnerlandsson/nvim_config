@@ -36,6 +36,12 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
+-- Move lines up and down using Alt+j and Alt+k
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
 -- Rust specific keymaps
 local function set_rust_keymaps()
   local opts = { noremap = true, silent = true, buffer = true }
