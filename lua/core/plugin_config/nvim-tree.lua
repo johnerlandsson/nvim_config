@@ -19,5 +19,5 @@ require("nvim-tree").setup {
   on_attach = my_on_attach,
   ---
 }
-# Toggle finder with Ctrl+n
+-- Toggle finder with Ctrl+n
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
