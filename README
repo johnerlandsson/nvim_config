@@ -2,6 +2,34 @@ My personal nvim settings
 
 * Clone to ~/.config/nvim
 * Symlink tmux.conf to ~/.tmux.conf
-* Put openai key in ~/.config/openai.token 
+* Put openai key in ~/.config/openai.token
+
+## Elixir (coc.nvim)
+
+1. `:CocInstall coc-elixir`
+2. The elixir-ls build bundled with coc-elixir is precompiled for an older
+   Erlang/OTP and may crash on start ("please re-compile this module with an
+   Erlang/OTP ... compiler"). If so, build ElixirLS's self-installing
+   launcher from source instead (it rebuilds itself against whatever
+   Elixir/OTP each project uses, so it won't need re-doing on upgrades):
+
+   ```
+   git clone https://github.com/elixir-lsp/elixir-ls.git /tmp/elixir-ls
+   cd /tmp/elixir-ls
+   mix local.hex --force --if-missing
+   mix local.rebar --force --if-missing
+   MIX_ENV=prod mix deps.get
+   MIX_ENV=prod mix compile
+   MIX_ENV=prod mix elixir_ls.release2 -o ~/.local/share/elixir-ls
+   ```
+
+3. Point coc-elixir at it via a machine-local `coc-settings.json` (ignored by
+   git) in this directory:
+
+   ```json
+   {
+     "elixir.pathToElixirLS": "/home/<you>/.local/share/elixir-ls/language_server.sh"
+   }
+   ```
 
 
